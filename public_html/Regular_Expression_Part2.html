@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Regular expression in js</title>
+        <script type="text/javascript">
+            function fn1()
+            {
+                var pwd = document.getElementById("pwd");
+              
+                if (pwd.value.trim().length<8||pwd.value.trim()=="")
+                    alert("password too sort");
+                else if (pwd.value.trim().search(/[0-9]/)==-1)
+                    alert("Atleast include one integer in password");
+                else if (pwd.value.trim().search(/[a-b]/)==-1)
+                    alert("Atleast include one lowercase in password");
+                else if (pwd.value.trim().search(/[A-Z]/)==-1)
+                    alert("Atleast include one uppercase in password");
+                else if (pwd.value.trim().search(/[@\#\$\%|^|&|*|_]/)==-1)
+                    alert("Atleast include one special character in password");
+                else
+                    document.getElementById("lbp").style.visibility = "visible";
+            }
+        </script>
+    </head>
+    <body>
+        <input type="password" id="pwd" placeholder="password"/>
+        <label id="lbp" style="color:blue; visibility:hidden;">Strong Password</label>
+        <br><br>
+        <button onclick="fn1()" type="button">Submit</button>
+    </body>
+</html>
