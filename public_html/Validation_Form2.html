@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Validation Form</title>
+        <script type="text/javascript">
+            function Validation()
+            {
+                var user = document.getElementById("uname");
+                var pwd = document.getElementById("pwd");
+                if (user.value.trim() == "")
+                {
+                    user.style.border = "solid 3px red";
+                    document.getElementById("lbu").style.visibility = "visible";
+                    return false;
+                } else if (pwd.value.trim() == "")
+                {
+                    pwd.style.border = "solid 3px red";
+                    document.getElementById("lbp").style.visibility = "visible";
+                    return false;
+                } else if (pwd.value.trim().length < 5)
+                {
+                    pwd.style.border = "solid 3px red";
+                    document.getElementById("lbp_sort").style.visibility = "visible";
+                    return false;
+                } else
+                    return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="return Validation()" action="message.html" >
+            <input id="uname" type="text" placeholder="Username"/>
+            <label id="lbu" style="color:red; visibility: hidden;">Invalid User</label>
+            <br><br>
+            <input id="pwd" type="password" placeholder="Password"/>
+            <label id="lbp" style="color:red; visibility: hidden;">Blank Password</label>
+            <br><br>
+            <label id="lbp_sort" style="color:red; visibility: hidden;">Password too sort</label>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
+
