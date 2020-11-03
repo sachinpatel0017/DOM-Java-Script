@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Regular Expression</title>
+        <script type="text/javascript">
+            function Validation()
+            {
+                var user = document.getElementById("uname");
+                var regx=/E/i;
+                //i is for case insensitive...
+                if(regx.test(user))
+                    alert("Valid Username");
+                else
+                    alert("Invalid Username");
+                    document.getElementById("lblu").style.visibility="visible";
+            }
+        </script>
+    </head>
+    <body>
+        <form  action="message.html" >
+            <input id="uname" type="text" placeholder="Username"/>
+            <label id="lblu" style="color:red;visibility:hidden ">Invalid Username</label>
+            <br><br>
+            <button onclick="Validation()" type="button">Click Me</button>
+        </form>
+    </body>
+</html>
+
