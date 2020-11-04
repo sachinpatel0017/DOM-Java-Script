@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Mobile Validation</title>
+        <script type="text/javascript">
+            function fn1()
+            {
+                var email = document.getElementById("em").value;
+                var regx = /^([0-9 a-z \.-]+)@([a-z 0-9 -]+).([a-z]{2,8})(.[a-z]{2,8})$/;
+                // var regx = /^([0-9 a-z \.-]+)@([a-z 0-9 -]+).([a-z]{2,8})(.[a-z]{2,8})?$/;
+                //? is for optonal
+                if (regx.test(email))
+                {
+                    document.getElementById("lbe").innerHTML = "Valid";
+                    document.getElementById("lbe").style.visibility = "visible";
+                    document.getElementById("lbe").style.color = "green";
+                } else
+                    document.getElementById("lbe").innerHTML = "InValid";
+                document.getElementById("lbe").style.visibility = "visible";
+                document.getElementById("lbe").value.style.color = "red";
+            }
+        </script>
+    </head>
+    <body>
+        <input id="em" type="text" placeholder="Email"/>
+        <label id="lbe" style="color:red; visibility: hidden;">InValid</label>
+        <br>
+        <button onclick="fn1()" type="button">Submit</button>
+    </body>
+</html>
