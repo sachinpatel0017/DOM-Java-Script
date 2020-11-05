@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>
+            Zoom in or Zoom out Image
+        </title>
+        <script type="text/javascript">
+            var width = 100;
+            var difference = 2;
+            var intervalId = 0;
+            function Increase()
+            {
+                clearInterval(intervalId);
+                intervalId = setInterval(ZoomIn, 20);
+            }
+            function ZoomIn()
+            {
+                if (width < 200)
+                {
+                    width = width + difference;
+                    document.getElementById("img1").style.width=width;
+                    console.log(width);
+                } else
+                    clearInterval(intervalId);
+            }
+            function Decrease()
+            {
+                clearInterval(intervalId);
+                intervalId = setInterval(ZoomOut, 20);
+            }
+            function ZoomOut()
+            {
+                if (width > 100)
+                {
+                    width = width - difference;
+                    document.getElementById("img1").style.width = width;
+                    console.log(width);
+                } else
+                    clearInterval(intervalId);
+            }
+        </script>
+    </head>
+    <body>
+        <br>
+        <br>
+
+
+        <image  onmouseover="Increase()" onmouseout="Decrease()" id="img1" src="Img\Ajeeb_Duniya.jpg" width="100px"></image>
+
+
+
+    </body>
+</html>
