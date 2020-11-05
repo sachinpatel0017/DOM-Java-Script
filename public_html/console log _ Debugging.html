@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Object Console log for Debugging in Chrome Dev Tool (press ctrl+shift+c)</title>
+        <script type="text/javascript">
+            function fn1() {
+                var a = document.getElementById("t1").value;
+
+                var b = document.getElementById("t2").value;
+
+                document.getElementById("r").innerHTML = "Result : " + (a + b);
+                console.log(a + b);
+            }
+        </script>
+    </head>
+    <body>
+        <input id="t1" type="text" placeholder="text1"/>
+        <br><br>
+        <input id="t2" type="text" placeholder="text2"/>
+        <br>
+        <h2 id="r" >Result</h2>
+        <button onclick="fn1()" type="button">Add</button>
+    </body>
+</html>
