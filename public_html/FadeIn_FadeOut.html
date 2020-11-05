@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>
+            Fade in or Fade out Image
+        </title>
+        <script type="text/javascript">
+            var opacity = 0;
+            var intervalId = 0;
+            function FadeOut()
+            {
+                intervalId = setInterval(hide, 200);
+            }
+            function hide()
+            {
+                var img = document.getElementById("img1");
+                opacity=Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+                if(opacity>0)
+                {
+                    opacity=opacity-0.1;
+                    img.style.opacity=opacity;
+                    console.log(opacity);
+                      
+                }
+                else
+                    clearInterval(intervalId);
+            }
+            function FadeIn()
+            {
+                intervalId = setInterval(show, 200);
+            }
+            function show()
+            {
+                var img = document.getElementById("img1");
+                opacity=Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+                if(opacity<1)
+                {
+                    opacity=opacity+0.1;
+                    img.style.opacity=opacity;
+                    console.log(opacity);
+                }
+                else
+                    clearInterval(intervalId);
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="FadeOut()" id="btn1">FadeOut</button>
+        <br>
+        <image id="img1" src="Img\Ajeeb_Duniya.jpg" width="250px" alt="Ajeeb_Duniya"></image>
+        <br>
+        <button onclick="FadeIn()" id="btn2">FadeIn</button>
+
+    </body>
+</html>
