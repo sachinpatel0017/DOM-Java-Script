@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Timing function</title>
+        <script type="text/javascript">
+         var ID=0;
+         var second=0;
+         function printMsg()
+         {
+             document.getElementById("t").innerHTML="5 second is passing out";
+         }
+         function start1()
+         {
+             ID=window.setTimeout(printMsg,5000);
+         }
+        function stop1()
+         {
+             window.clearTimeout(ID);
+         } 
+          function printMsg2()
+         {
+             document.getElementById("t1").innerHTML=second + " seconds";
+             second++;
+         }
+         function start2()
+         {
+             ID=window.setInterval(printMsg2,1000);
+         }
+         function stop2()
+         {
+             window.clearTimeout(ID);
+         } 
+       
+        </script>
+        
+    </head>
+    <body>
+        <button onclick="start1()">start1</button>
+        <h2 id="t" >Some text</h2>
+        <button onclick="stop1()">stop1</button>
+        <br><br>
+        <h1>Time out interval </h1>
+        <br>
+        <button onclick="start2()">start2</button>
+        <h2 id="t1">any text</h2>
+         <button onclick="stop2()">stop2</button>
+    </body>
+</html>
